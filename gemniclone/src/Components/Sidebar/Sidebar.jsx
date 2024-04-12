@@ -1,9 +1,16 @@
 import "./Sidebar.css"
 import { assets } from "../../assets/assets"
 import { useState } from "react"
+import { useContext } from "react"
+import { ContextApp } from "../../context/Contextfile"
 
 const Sidebar = () => {
     const [ToogleMenu, setToogleMenu] = useState(false)
+
+    const {
+        PrevPrompt
+    } = useContext(ContextApp)
+
     return (
         <div className="sidebar">
             <div className="top">
@@ -14,12 +21,20 @@ const Sidebar = () => {
                 </div>
                 {ToogleMenu && <div className="recent">
                     <p className="recent-title">
-                        recent
+                        Recent
                     </p>
-                    <div className="recent-entry">
-                        <img src={assets.message_icon} alt="" />
-                        <p>what is react ... </p>
-                    </div>
+                    {
+                        PrevPrompt ?
+                            PrevPrompt.map((val) => {
+                                return (
+                                    <div className="recent-entry" key={val}>
+                                        <img src={assets.message_icon} alt="" />
+                                        <p >{val} ...</p>
+                                    </div>
+                                )
+                            })
+                            : null
+                    }
                 </div>}
             </div>
             <div className="bottom">
