@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+}
+.card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    gap: 1rem;
+}
+.usercard {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: rgb(0, 0, 0);
+    text-align: center;
+    /* overflow-y: scroll; */
+}
+p{
+
+  margin-top: 10px;
+}
